@@ -13,10 +13,11 @@ dependencies:
   flutter:
     sdk: flutter
 
-
-  cupertino_icons: ^1.0.2
-  font_awesome_flutter: ^9.2.0
-  google_fonts: ^2.3.1
+  cupertino_icons: ^1.0.4
+  carousel_slider: ^4.0.0
+  http: ^0.13.4
+  responsive_framework: ^0.1.7
+  font_awesome_flutter: ^10.0.0
 
 dev_dependencies:
   flutter_test:
@@ -27,6 +28,15 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: fonts/Montserrat-Regular.ttf
+
+    - family: Electrolize
+      fonts:
+        - asset: fonts/Electrolize-Regular.ttf
 
   assets:
     - assets/images/
