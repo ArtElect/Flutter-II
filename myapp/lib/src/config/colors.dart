@@ -6,6 +6,7 @@ class AppColors {
   static const Color drawerDivierColor = Colors.black;
   static Color? drawerFooterColor = Colors.grey[600];
   static const Color drawerButtonColor = Colors.blue;
+  static const Color navigationButtonsColor = Color(0xFF183153);
 
   //top menu
   static const Color topBarTitleColor = Color(0xFF077bd7);

@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
       ? SmallTopBar(opacity: _opacity,)
       : LargeTopBar(screenSize: screenSize, opacity: _opacity,),
       drawerEdgeDragWidth: 0,
-      drawer: const NavigationDrawer(),
+      drawer: NavigationDrawer(),
       body: SingleChildScrollView(
         controller: _scrollController,
         child: Column(

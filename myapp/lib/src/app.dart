@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         ],
       ),
       initialRoute: PageRoutes.home,
-      onGenerateRoute: Routes.generateRoute,
+      onGenerateRoute: (setting) => Routes().generateRoute(setting),
     );
   }
 }

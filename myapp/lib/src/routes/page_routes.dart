@@ -1,7 +1,11 @@
 class PageRoutes {
   static const String home = '/';
-  static const String login = '/login';
-  static const String register = '/register';
-  static const String read = '/read';
-  static const String contact = '/contact';
+  static const String history = '/history';
+  static const String science = '/science';
+  static const String philosophy = '/philosophy';
+  static const String novels = '/novels';
+  static const String scifi = '/scifi';
+  static const String fantasy = '/fantasy';
+  static const String adventure = '/adventure';
+  static const String detail = '/detail';
 }

@@ -1,23 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/src/navigationDrawer/navigation_drawer.dart';
 import 'package:myapp/src/routes/page_routes.dart';
 import 'package:myapp/src/screens/home/home.dart';
 
 class Routes {
-  static Route<dynamic> generateRoute(RouteSettings settings) {
+
+  static Route routeBuilder(RouteSettings settings, Widget page) => PageRouteBuilder(
+    settings: settings,
+    pageBuilder: (context, _, __) => page,
+    transitionsBuilder: (context, opacity, _, child) => FadeTransition(opacity: opacity, child: child)
+  );
+
+  Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case PageRoutes.home:
-        return PageRouteBuilder(
-          settings: settings,
-          pageBuilder: (context, _, __) => const HomePage(),
-          transitionsBuilder: (context, opacity, _, child) => FadeTransition(opacity: opacity, child: child)
-        );
-      case PageRoutes.login:
-        return PageRouteBuilder(
-          settings: settings,
-          pageBuilder: (context, _, __) => const Scaffold(drawer: NavigationDrawer(),),
-          transitionsBuilder: (context, opacity, _, child) => FadeTransition(opacity: opacity, child: child)
-        );
+        return routeBuilder(settings, const HomePage());
+      case PageRoutes.history:
+        return routeBuilder(settings, Container());
+      case PageRoutes.science:
+        return routeBuilder(settings, Container());
+      case PageRoutes.philosophy:
+        return routeBuilder(settings, Container());
+      case PageRoutes.novels:
+        return routeBuilder(settings, Container());
+      case PageRoutes.scifi:
+        return routeBuilder(settings, Container());
+      case PageRoutes.fantasy:
+        return routeBuilder(settings, Container());
+      case PageRoutes.adventure:
+        return routeBuilder(settings, Container());
+      case PageRoutes.detail:
+        return routeBuilder(settings, Container());
       default:
         return unknownPage();
     }
