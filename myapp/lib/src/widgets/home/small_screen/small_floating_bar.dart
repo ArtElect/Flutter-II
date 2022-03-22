@@ -29,32 +29,41 @@ class _SmallFloatingBarState extends State<SmallFloatingBar> {
       children: [
         for (int i = 0; i < items.length; i++)
         Padding(
-          padding: EdgeInsets.only(bottom: widget.screenSize.height / 40),
-          child: Card(
-            elevation: 4,
-            child: Padding(
-              padding: EdgeInsets.only(
-                top: widget.screenSize.width / 45,
-                bottom: widget.screenSize.height / 45,
-                left: widget.screenSize.width / 40,
-              ),
-              child: Row(
-                children: [
-                  Icon(icons[i]),
-                  SizedBox(width: widget.screenSize.width / 50,),
-                  InkWell(
-                    splashColor: AppColors.floatingBarSplashColor,
-                    hoverColor: AppColors.floatingBarHoverColor,
-                    onHover: (value) => setState(() => value ? _isHovering[i] = true : _isHovering[i] = false),
-                    child: Text(
-                      items[i],
-                      style: TextStyle(
-                        color: _isHovering[i] ? AppColors.floatingBarHoveringColor : AppColors.floatingBarReleasedColor,
+          padding: items[i] == 'History'
+          ? EdgeInsets.only(top: widget.screenSize.height / 15, bottom: widget.screenSize.height / 40)
+          : EdgeInsets.only(bottom: widget.screenSize.height / 40),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(9),
+            splashColor: AppColors.floatingBarSplashColor,
+            hoverColor: AppColors.floatingBarHoverColor,
+            onHover: (value) => setState(() => value ? _isHovering[i] = true : _isHovering[i] = false),
+            onTap: () => Navigator.popAndPushNamed(context, '/${items[i].toLowerCase()}'),
+            child: Card(
+              elevation: 4,
+              child: Padding(
+                padding: EdgeInsets.only(
+                  top: widget.screenSize.width / 45,
+                  bottom: widget.screenSize.height / 45,
+                  left: widget.screenSize.width / 40,
+                ),
+                child: Row(
+                  children: [
+                    Icon(icons[i]),
+                    SizedBox(width: widget.screenSize.width / 50,),
+                    InkWell(
+                      splashColor: AppColors.floatingBarSplashColor,
+                      hoverColor: AppColors.floatingBarHoverColor,
+                      onHover: (value) => setState(() => value ? _isHovering[i] = true : _isHovering[i] = false),
+                      child: Text(
+                        items[i],
+                        style: TextStyle(
+                          color: _isHovering[i] ? AppColors.floatingBarHoveringColor : AppColors.floatingBarReleasedColor,
+                        ),
                       ),
+                      onTap: () => Navigator.popAndPushNamed(context, '/${items[i].toLowerCase()}'),
                     ),
-                    onTap: () {},
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/src/config/colors.dart';
+import 'package:myapp/src/routes/page_routes.dart';
 import 'package:myapp/src/widgets/home/floating_bar_item.dart';
 
 class LargeFloatingBar extends StatefulWidget {
@@ -35,13 +36,13 @@ class _LargeFloatingBarState extends State<LargeFloatingBar> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  FloatingBarItem(screenSize: widget.screenSize, text: 'History', onTap: () {},),
+                  FloatingBarItem(screenSize: widget.screenSize, text: 'History', onTap: () => Navigator.popAndPushNamed(context, PageRoutes.history),),
                   spacer,
-                  FloatingBarItem(screenSize: widget.screenSize, text: 'Science', onTap: () {},),
+                  FloatingBarItem(screenSize: widget.screenSize, text: 'Science', onTap: () => Navigator.popAndPushNamed(context, PageRoutes.science),),
                   spacer,
-                  FloatingBarItem(screenSize: widget.screenSize, text: 'Philosophy', onTap: () {},),
+                  FloatingBarItem(screenSize: widget.screenSize, text: 'Philosophy', onTap: () => Navigator.popAndPushNamed(context, PageRoutes.philosophy),),
                   spacer,
-                  FloatingBarItem(screenSize: widget.screenSize, text: 'Novels', onTap: () {},),
+                  FloatingBarItem(screenSize: widget.screenSize, text: 'Novels', onTap: () => Navigator.popAndPushNamed(context, PageRoutes.novels),),
                 ],
               ),
             ),

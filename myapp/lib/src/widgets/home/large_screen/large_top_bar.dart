@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/src/config/colors.dart';
 import 'package:myapp/src/config/fonts.dart';
+import 'package:myapp/src/routes/page_routes.dart';
 import 'package:myapp/src/widgets/home/top_bar_menu_item.dart';
 
 class LargeTopBar extends StatelessWidget implements PreferredSizeWidget {
@@ -37,13 +38,13 @@ class LargeTopBar extends StatelessWidget implements PreferredSizeWidget {
                     ),
                   ),
                   SizedBox(width: screenSize.width / 15),
-                  const TopBarMenuItem(title: 'Home',),
+                  TopBarMenuItem(title: 'Home', onTap: () => Navigator.popAndPushNamed(context, PageRoutes.home),),
                   SizedBox(width: screenSize.width / 15),
-                  const TopBarMenuItem(title: 'About',),
+                  TopBarMenuItem(title: 'About', onTap: () {}),
                   SizedBox(width: screenSize.width / 15),
-                  const TopBarMenuItem(title: 'History',),
+                  TopBarMenuItem(title: 'History', onTap: () {}),
                   SizedBox(width: screenSize.width / 15),
-                  const TopBarMenuItem(title: 'Contact',),
+                  TopBarMenuItem(title: 'Contact', onTap: () {}),
                 ],
               ),
             ),

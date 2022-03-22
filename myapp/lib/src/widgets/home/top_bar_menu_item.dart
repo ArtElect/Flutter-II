@@ -3,8 +3,9 @@ import 'package:myapp/src/config/colors.dart';
 
 class TopBarMenuItem extends StatefulWidget {
   final String title;
+  final GestureTapCallback? onTap;
   
-  const TopBarMenuItem({Key? key, required this.title}) : super(key: key);
+  const TopBarMenuItem({Key? key, required this.title, required this.onTap}) : super(key: key);
 
   @override
   _TopBarMenuItemState createState() => _TopBarMenuItemState();
@@ -17,7 +18,7 @@ class _TopBarMenuItemState extends State<TopBarMenuItem> {
   Widget build(BuildContext context) {
     return InkWell(
       onHover: (value) => setState(() => value ? isHovering = true : isHovering = false),
-      onTap: () {},
+      onTap: widget.onTap,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/src/config/colors.dart';
+import 'package:myapp/src/config/fonts.dart';
 import 'package:myapp/src/widgets/adaptive/adaptive.dart';
-import 'package:myapp/src/widgets/home/large_screen/large_featured_heading.dart';
-import 'package:myapp/src/widgets/home/small_screen/small_featured_heading.dart';
 
 class FeaturedHeading extends StatelessWidget {
   final Size screenSize;
@@ -16,9 +16,21 @@ class FeaturedHeading extends StatelessWidget {
         left: screenSize.width / 15,
         right: screenSize.width / 15,
       ),
-      child:  AdaptiveWidget.isSmallScreen(context)
-        ? const SmallFeaturedHeading()
-        : const LargeFeaturedHeading()
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(
+            'Featured',
+            style: TextStyle(
+              fontSize: AdaptiveWidget.isSmallScreen(context) ? screenSize.width / 15 : screenSize.width / 30,
+              fontFamily: AppFonts.largeFeaturedHeadingFont,
+              fontWeight: FontWeight.bold,
+              color:AppColors.feautedHeadingColor,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

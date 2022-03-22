@@ -6,11 +6,12 @@ class LargeFeaturedTiles extends StatelessWidget {
   final Size screenSize;
   final List<String> images;
   final List<String> title;
+  
   const LargeFeaturedTiles({
     Key? key,
     required this.screenSize,
     required this.images,
-    required this.title
+    required this.title,
   }) : super(key: key);
 
   @override
@@ -25,41 +26,44 @@ class LargeFeaturedTiles extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           ...Iterable<int>.generate(images.length).map(
-            (int pageIndex) => Column(
-              children: [
-                SizedBox(
-                  height: screenSize.width / 6,
-                  width: screenSize.width / 3.8,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.0),
-                      image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage(images[pageIndex],),
+            (int index) => GestureDetector(
+              onTap: () => Navigator.popAndPushNamed(context, '/${title[index].toLowerCase()}'),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: screenSize.width / 6,
+                    width: screenSize.width / 3.8,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20.0),
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage(images[index],),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            offset: const Offset(0, 10),
+                            blurRadius: 20,
+                            spreadRadius: 5,
+                            color: AppColors.feautedTilesColor,
+                          )
+                        ]
                       ),
-                      boxShadow: [
-                        BoxShadow(
-                          offset: const Offset(0, 10),
-                          blurRadius: 20,
-                          spreadRadius: 5,
-                          color: AppColors.feautedTilesColor,
-                        )
-                      ]
                     ),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: screenSize.height / 70,),
-                  child: Text(
-                    title[pageIndex],
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontFamily: AppFonts.largeFeaturedtilesFont,
-                      fontWeight: FontWeight.w500,
+                  Padding(
+                    padding: EdgeInsets.only(top: screenSize.height / 70,),
+                    child: Text(
+                      title[index],
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontFamily: AppFonts.largeFeaturedtilesFont,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],
