@@ -18,4 +18,11 @@ class AppFonts {
   
   //main heading
   static const String mainHeadingTextFont = 'Montserrat';
+
+  //book list
+  static const String booksListHeadingTextFont = 'Raleway';
+  static const String itemCardAuthorTextFont = 'Raleway';
+  static const String itemCardButtonTextFont = 'Raleway';
+  static const String itemCardRateNumberTextFont = 'Montserrat';
+  static const String itemCardTitleTextFont = 'Raleway';
 }

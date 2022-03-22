@@ -56,4 +56,13 @@ class AppColors {
   static const Color topBarHoveringColor = Color(0xFF077bd7);
   static const Color topBarReleasedColor = Color(0xFF077bd7);
   static const Color topBarUnderscoreColor = Colors.blue;
+
+  //book list
+  static const Color booksListHeadingColor = Color(0xFF263B5E);
+  static const Color itemCardAuthorColor = Color(0xFF787C83);
+  static const Color itemCardButtonColor = Color(0XFF097CD7);
+  static const Color itemCardButtonTextColor = Colors.white;
+  static const Color itemCardRateColor = Color(0xFF11998E);
+  static const Color itemCardRateNumberColor = Color(0xFF787C83);
+
 }

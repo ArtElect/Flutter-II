@@ -10,4 +10,5 @@ class AppImages {
   static const String scifi = 'assets/images/scifi.jpeg';
   static const String fantasy = 'assets/images/fantasy.jpeg';
   static const String adventure = 'assets/images/adventure.jpeg';
+  static const String bookExemple = 'assets/images/book1.jpg';
 }
