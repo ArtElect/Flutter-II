@@ -20,7 +20,7 @@ class DetailTitle extends StatelessWidget {
         style: TextStyle(
           fontFamily: AppFonts.detailTitleTextFont,
           fontSize: AdaptiveWidget.isSmallScreen(context)
-          ? screenSize.width / 50
+          ? screenSize.width / 18
           : screenSize.width / 40,
           fontWeight: FontWeight.w700
         ),

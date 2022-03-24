@@ -28,14 +28,16 @@ class DetailRate extends StatelessWidget {
               color: AppColors.detailRateColor,
             ),
             itemCount: 5,
-            itemSize: screenSize.width / 50,
+            itemSize: AdaptiveWidget.isSmallScreen(context)
+            ? screenSize.width / 20
+            : screenSize.width / 50,
           ),
           Text(
             '(42 reviews)',
             style: TextStyle(
               fontFamily: AppFonts.detailRateTextFont,
               fontSize: AdaptiveWidget.isSmallScreen(context)
-              ? screenSize.width / 35
+              ? screenSize.width / 30
               : screenSize.width / 80,
               fontWeight: FontWeight.w700
             ),

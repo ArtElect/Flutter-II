@@ -20,24 +20,30 @@ class DetailReadButton extends StatelessWidget {
         ? screenSize.width / 50
         : screenSize.width / 40,
         top: AdaptiveWidget.isSmallScreen(context)
-        ? screenSize.width / 60
+        ? screenSize.width / 5
         : screenSize.width * 0.05
       ),
       child: GFButton(
         padding: EdgeInsets.only(
-          left: screenSize.width / 18,
-          right: screenSize.width / 18,
+          left: screenSize.width / 20,
+          right: screenSize.width / 20,
         ),
         elevation: 10,
         text: 'Start reading',
-        size: screenSize.width / 30,
+        size: AdaptiveWidget.isSmallScreen(context)
+        ? screenSize.width / 13
+        : screenSize.width / 40,
         color:AppColors.detailButtonColor,
         shape: GFButtonShape.pills,
         textStyle: TextStyle(
           color: AppColors.detailButtonTextColor,
           fontFamily: AppFonts.detailButtonTextFont,
-          fontSize: screenSize.width / 65,
-          fontWeight: FontWeight.w200,
+          fontSize: AdaptiveWidget.isSmallScreen(context)
+          ? screenSize.width / 25
+          : screenSize.width / 50,
+          fontWeight: AdaptiveWidget.isSmallScreen(context) 
+          ? FontWeight.w600
+          : FontWeight.w200,
         ),
         onPressed: () {},
       ),

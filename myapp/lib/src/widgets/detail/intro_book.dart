@@ -20,7 +20,7 @@ class IntroBook extends StatelessWidget {
           child: Text(
             "Synopsis",
             style: TextStyle(
-              fontSize: screenSize.width / 50,
+              fontSize: 30,
               fontWeight: FontWeight.w600,
               fontFamily: AppFonts.detailIntroTitleTextFont,
             ),
@@ -30,14 +30,13 @@ class IntroBook extends StatelessWidget {
           padding: EdgeInsets.only(
             bottom: screenSize.width / 40,
             left: screenSize.width * 0.01,
-            right: screenSize.width * 0.30,
           ),
           child: Text(
             "Why do the rich stay rich and the poor stay poor? Because the rich teach their kids how to manage money and the others don't! Most employees would rather spend year after year in college and university learning nothing about money than become successful themselves."
             "\nRobert T. Kiyosaki had a \"rich dad\" and a \"poor dad\" growing up. After heeding the advice of the former, he was able to retire at the age of 47. He had learned to make money work for him instead of the other way around. In \"Rich Dad Poor Dad\" he shares his knowledge and shows how anyone can be successful.",
-            textAlign: TextAlign.justify,
+            textAlign: TextAlign.start,
             style: TextStyle(
-              fontSize: screenSize.width / 85,
+              fontSize: 20,
               fontWeight: FontWeight.w600,
               fontFamily: AppFonts.detailIntroContentTextFont,
             ),
