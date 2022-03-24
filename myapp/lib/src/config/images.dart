@@ -11,4 +11,7 @@ class AppImages {
   static const String fantasy = 'assets/images/fantasy.jpeg';
   static const String adventure = 'assets/images/adventure.jpeg';
   static const String bookExemple = 'assets/images/book1.jpg';
+  static const String networkError = 'assets/images/networkError.png';
+  static const String internalServerError = 'assets/images/500Error.png';
+  static const String noDataRecord = 'assets/images/nodata.png';
 }

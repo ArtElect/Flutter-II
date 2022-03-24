@@ -34,8 +34,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     double _opacity = _scrollPosition > 0 && _scrollPosition < screenSize.height * 0.40
-      ? _scrollPosition / (screenSize.height * 0.40)
-      : 1;
+    ? _scrollPosition / (screenSize.height * 0.40)
+    : 1;
+
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AdaptiveWidget.isSmallScreen(context)
@@ -46,33 +47,32 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         controller: _scrollController,
         child: Column(
-            children: [
-              Stack(
-                children: [
-                  SizedBox(
-                    height: screenSize.height * 0.65,
-                    width: screenSize.width,
-                    child: Image.asset(
-                      AppImages.heading,
-                      fit: BoxFit.cover,
-                    ),
+          children: [
+            Stack(
+              children: [
+                SizedBox(
+                  height: screenSize.height * 0.65,
+                  width: screenSize.width,
+                  child: Image.asset(
+                    AppImages.heading,
+                    fit: BoxFit.cover,
                   ),
-                  Column(
-                    children: [
-                      FloatingBarContents(screenSize: screenSize),
-                      FeaturedHeading(screenSize: screenSize,),
-                      FeaturedTiles(screenSize: screenSize),
-                      MainHeading(screenSize: screenSize),
-                      const MainCarousel(),
-                      SizedBox(height: screenSize.height / 10,),
-                      BottomBar(screenSize: screenSize,),
-                    ],
-                  ),
-                ],
-              ),
-      
-            ],
-          ),
+                ),
+                Column(
+                  children: [
+                    FloatingBarContents(screenSize: screenSize),
+                    FeaturedHeading(screenSize: screenSize,),
+                    FeaturedTiles(screenSize: screenSize),
+                    MainHeading(screenSize: screenSize),
+                    const MainCarousel(),
+                    SizedBox(height: screenSize.height / 10,),
+                    BottomBar(screenSize: screenSize,),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

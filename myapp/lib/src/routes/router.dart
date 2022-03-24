@@ -1,16 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/src/routes/page_routes.dart';
 import 'package:myapp/src/screens/bookslist/books_list.dart';
+import 'package:myapp/src/screens/error/network_error.dart';
 import 'package:myapp/src/screens/detail/detail.dart';
 import 'package:myapp/src/screens/home/home.dart';
+import 'package:myapp/src/utils/connectivity_provider.dart';
+import 'package:provider/provider.dart';
 
 class Routes {
 
-  static Route routeBuilder(RouteSettings settings, Widget page) => PageRouteBuilder(
-    settings: settings,
-    pageBuilder: (context, _, __) => page,
-    transitionsBuilder: (context, opacity, _, child) => FadeTransition(opacity: opacity, child: child)
-  );
+  static Route routeBuilder(RouteSettings settings, Widget page) {
+    
+    return PageRouteBuilder(
+      settings: settings,
+      pageBuilder: (context, _, __) => page,
+      transitionsBuilder: (context, opacity, _, child) {
+        final isConnected = Provider.of<ConnectivityProvider>(context).isConnected;
+        if (isConnected) {
+          return FadeTransition(opacity: opacity, child: child);
+        } else {
+          return const NetworkErrorPage();
+        }
+      },
+    );
+  }
 
   Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
