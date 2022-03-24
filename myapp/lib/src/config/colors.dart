@@ -65,4 +65,8 @@ class AppColors {
   static const Color itemCardRateColor = Color(0xFF11998E);
   static const Color itemCardRateNumberColor = Color(0xFF787C83);
 
+  //detail
+  static const Color detailRateColor = Color(0xFF11998E);
+  static const Color detailButtonColor = Color(0XFF097CD7);
+  static const Color detailButtonTextColor = Colors.white;
 }

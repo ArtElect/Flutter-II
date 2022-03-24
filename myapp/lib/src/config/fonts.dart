@@ -25,4 +25,13 @@ class AppFonts {
   static const String itemCardButtonTextFont = 'Raleway';
   static const String itemCardRateNumberTextFont = 'Montserrat';
   static const String itemCardTitleTextFont = 'Raleway';
+
+  //detail
+  static const String detailAuthorTextFont = 'Raleway';
+  static const String detailCategoryTextFont = 'Raleway';
+  static const String detailRateTextFont = 'Raleway';
+  static const String detailButtonTextFont = 'Raleway';
+  static const String detailTitleTextFont = 'Raleway';
+  static const String detailIntroTitleTextFont = 'Raleway';
+  static const String detailIntroContentTextFont = 'Montserrat';
 }

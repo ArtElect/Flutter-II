@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_animated/auto_animated.dart';
+import 'package:myapp/src/routes/page_routes.dart';
 import 'package:myapp/src/widgets/adaptive/adaptive.dart';
 import 'package:myapp/src/widgets/bookslist/item_card.dart';
 
@@ -33,7 +34,7 @@ class _BookslistContentsState extends State<BookslistContents> {
           end: Offset.zero,
         ).animate(animation),
         child: StreamBuilder(
-          builder: ((context, snapshot) => ItemCard(onTap: () {},)),
+          builder: ((context, snapshot) => ItemCard(onTap: () {Navigator.popAndPushNamed(context, PageRoutes.detail);},)),
         ),
       ),
     );

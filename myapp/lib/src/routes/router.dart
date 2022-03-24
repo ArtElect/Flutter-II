@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/src/routes/page_routes.dart';
 import 'package:myapp/src/screens/bookslist/books_list.dart';
+import 'package:myapp/src/screens/detail/detail.dart';
 import 'package:myapp/src/screens/home/home.dart';
 
 class Routes {
@@ -30,7 +31,7 @@ class Routes {
       case PageRoutes.adventure:
         return routeBuilder(settings, const BooksListPage(heading: 'Adventure',),);
       case PageRoutes.detail:
-        return routeBuilder(settings, Container(),);
+        return routeBuilder(settings, const DetailPage(),);
       default:
         return unknownPage();
     }
