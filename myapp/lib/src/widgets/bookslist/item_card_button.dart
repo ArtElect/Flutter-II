@@ -23,14 +23,18 @@ class ItemCardButton extends StatelessWidget {
       ),
       child: GFButton(
         text: 'Read',
-        size: screenSize.width / 30,
+        size: AdaptiveWidget.isSmallScreen(context)
+        ? screenSize.width / 25
+        : screenSize.width / 30,
         color:AppColors.itemCardButtonColor,
         shape: GFButtonShape.pills,
         textStyle: TextStyle(
           color: AppColors.itemCardButtonTextColor,
           fontFamily: AppFonts.itemCardButtonTextFont,
-          fontSize: screenSize.width / 55,
-          fontWeight: FontWeight.w200,
+          fontSize: AdaptiveWidget.isSmallScreen(context)
+          ? screenSize.width / 35 
+          : screenSize.width / 55,
+          fontWeight: FontWeight.w500,
         ),
         onPressed: () {},
       ),

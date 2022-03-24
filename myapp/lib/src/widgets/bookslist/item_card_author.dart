@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/src/config/colors.dart';
 import 'package:myapp/src/config/fonts.dart';
+import 'package:myapp/src/widgets/adaptive/adaptive.dart';
 
 class ItemCardAuthor extends StatefulWidget {
   final Size screenSize;
@@ -21,7 +22,9 @@ class _ItemCardAuthorState extends State<ItemCardAuthor> {
         style: TextStyle(
           fontWeight: FontWeight.w500,
           fontFamily: AppFonts.itemCardAuthorTextFont,
-          fontSize: widget.screenSize.width / 110,
+          fontSize: AdaptiveWidget.isSmallScreen(context)
+          ? widget.screenSize.width / 60
+          : widget.screenSize.width / 110,
           color: AppColors.itemCardAuthorColor,
         ),
       ),

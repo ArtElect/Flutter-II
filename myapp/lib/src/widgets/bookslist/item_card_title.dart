@@ -16,7 +16,7 @@ class ItemCardTitle extends StatelessWidget {
         style: TextStyle(
           fontFamily: AppFonts.itemCardTitleTextFont,
           fontSize: AdaptiveWidget.isSmallScreen(context)
-          ? screenSize.width / 50
+          ? screenSize.width / 45
           : screenSize.width / 80,
           fontWeight: FontWeight.w700
         ),

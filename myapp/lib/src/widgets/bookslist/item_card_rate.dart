@@ -22,7 +22,9 @@ class ItemCardRate extends StatelessWidget {
               color: AppColors.itemCardRateColor,
             ),
             itemCount: 5,
-            itemSize: screenSize.width / 50,
+            itemSize: AdaptiveWidget.isSmallScreen(context)
+            ? screenSize.width / 36
+            : screenSize.width / 50,
           ),
           Text(
             '42',
