@@ -31,3 +31,7 @@ Methods support by platform:
 | isMediumScreen | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | isLargeScreen | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | AdaptiveWidget | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+
+## Additional information
+
+Future plans to develop a library of responsive and adaptive UI Kit
