@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/src/navigationDrawer/navigation_drawer.dart';
-import 'package:myapp/src/widgets/adaptive/adaptive.dart';
+import 'package:adaptive_widgets/adaptive_widgets.dart';
 import 'package:myapp/src/widgets/detail/info_book.dart';
 import 'package:myapp/src/widgets/detail/intro_book.dart';
 import 'package:myapp/src/widgets/home/bottom_bar.dart';
@@ -20,7 +20,7 @@ class _DetailPageState extends State<DetailPage> {
     Size screenSize = MediaQuery.of(context).size;
     
     return Scaffold(
-      appBar: AdaptiveWidget.isSmallScreen(context)
+      appBar: AdaptiveWidget.isSmallScreen(screenSize)
       ? const SmallTopBar(opacity: 1.0,)
       : LargeTopBar(screenSize: screenSize, opacity: 1.0,),
       drawerEdgeDragWidth: 0,

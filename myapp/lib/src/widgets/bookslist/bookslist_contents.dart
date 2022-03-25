@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auto_animated/auto_animated.dart';
 import 'package:myapp/src/routes/page_routes.dart';
-import 'package:myapp/src/widgets/adaptive/adaptive.dart';
+import 'package:adaptive_widgets/adaptive_widgets.dart';
 import 'package:myapp/src/widgets/bookslist/item_card.dart';
 
 class BookslistContents extends StatefulWidget {
@@ -48,7 +48,7 @@ class _BookslistContentsState extends State<BookslistContents> {
       itemCount: 8,
       itemBuilder: buildAnimatedItem,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: AdaptiveWidget.isSmallScreen(context) ? 2 : 5,
+        crossAxisCount: AdaptiveWidget.isSmallScreen(widget.screenSize) ? 2 : 5,
         childAspectRatio: 0.7,
         mainAxisExtent: widget.screenSize.width * 0.38,
       ),

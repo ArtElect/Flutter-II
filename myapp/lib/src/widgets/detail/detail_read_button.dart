@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:myapp/src/config/colors.dart';
 import 'package:myapp/src/config/fonts.dart';
-import 'package:myapp/src/widgets/adaptive/adaptive.dart';
+import 'package:adaptive_widgets/adaptive_widgets.dart';
 
 class DetailReadButton extends StatelessWidget {
   final Size screenSize;
@@ -13,13 +13,13 @@ class DetailReadButton extends StatelessWidget {
   Widget build(BuildContext context){
     return Padding(
       padding: EdgeInsets.only(
-        left: AdaptiveWidget.isSmallScreen(context)
+        left: AdaptiveWidget.isSmallScreen(screenSize)
         ? screenSize.width / 50
         : screenSize.width / 40,
-        right: AdaptiveWidget.isSmallScreen(context)
+        right: AdaptiveWidget.isSmallScreen(screenSize)
         ? screenSize.width / 50
         : screenSize.width / 40,
-        top: AdaptiveWidget.isSmallScreen(context)
+        top: AdaptiveWidget.isSmallScreen(screenSize)
         ? screenSize.width / 5
         : screenSize.width * 0.05
       ),
@@ -30,7 +30,7 @@ class DetailReadButton extends StatelessWidget {
         ),
         elevation: 10,
         text: 'Start reading',
-        size: AdaptiveWidget.isSmallScreen(context)
+        size: AdaptiveWidget.isSmallScreen(screenSize)
         ? screenSize.width / 13
         : screenSize.width / 40,
         color:AppColors.detailButtonColor,
@@ -38,10 +38,10 @@ class DetailReadButton extends StatelessWidget {
         textStyle: TextStyle(
           color: AppColors.detailButtonTextColor,
           fontFamily: AppFonts.detailButtonTextFont,
-          fontSize: AdaptiveWidget.isSmallScreen(context)
+          fontSize: AdaptiveWidget.isSmallScreen(screenSize)
           ? screenSize.width / 25
           : screenSize.width / 50,
-          fontWeight: AdaptiveWidget.isSmallScreen(context) 
+          fontWeight: AdaptiveWidget.isSmallScreen(screenSize) 
           ? FontWeight.w600
           : FontWeight.w200,
         ),

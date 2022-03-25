@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:myapp/src/config/colors.dart';
 import 'package:myapp/src/config/fonts.dart';
-import 'package:myapp/src/widgets/adaptive/adaptive.dart';
+import 'package:adaptive_widgets/adaptive_widgets.dart';
 
 class ItemCardButton extends StatelessWidget {
   final Size screenSize;
@@ -13,17 +13,17 @@ class ItemCardButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        left: AdaptiveWidget.isSmallScreen(context)
+        left: AdaptiveWidget.isSmallScreen(screenSize)
         ? screenSize.width / 50
         : screenSize.width / 40,
-        right: AdaptiveWidget.isSmallScreen(context)
+        right: AdaptiveWidget.isSmallScreen(screenSize)
         ? screenSize.width / 50
         : screenSize.width / 40,
         top: screenSize.width / 100
       ),
       child: GFButton(
         text: 'Read',
-        size: AdaptiveWidget.isSmallScreen(context)
+        size: AdaptiveWidget.isSmallScreen(screenSize)
         ? screenSize.width / 25
         : screenSize.width / 30,
         color:AppColors.itemCardButtonColor,
@@ -31,7 +31,7 @@ class ItemCardButton extends StatelessWidget {
         textStyle: TextStyle(
           color: AppColors.itemCardButtonTextColor,
           fontFamily: AppFonts.itemCardButtonTextFont,
-          fontSize: AdaptiveWidget.isSmallScreen(context)
+          fontSize: AdaptiveWidget.isSmallScreen(screenSize)
           ? screenSize.width / 35 
           : screenSize.width / 55,
           fontWeight: FontWeight.w500,

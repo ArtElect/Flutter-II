@@ -9,7 +9,7 @@ import 'package:myapp/src/widgets/home/floating_bar_contents.dart';
 import 'package:myapp/src/widgets/home/main_heading.dart';
 import 'package:myapp/src/widgets/home/small_screen/small_top_bar.dart';
 import 'package:myapp/src/widgets/home/large_screen/large_top_bar.dart';
-import 'package:myapp/src/widgets/adaptive/adaptive.dart';
+import 'package:adaptive_widgets/adaptive_widgets.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AdaptiveWidget.isSmallScreen(context)
+      appBar: AdaptiveWidget.isSmallScreen(screenSize)
       ? SmallTopBar(opacity: _opacity,)
       : LargeTopBar(screenSize: screenSize, opacity: _opacity,),
       drawerEdgeDragWidth: 0,

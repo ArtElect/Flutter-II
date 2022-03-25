@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/src/config/images.dart';
-import 'package:myapp/src/widgets/adaptive/adaptive.dart';
+import 'package:adaptive_widgets/adaptive_widgets.dart';
 import 'package:myapp/src/widgets/detail/detail_author.dart';
 import 'package:myapp/src/widgets/detail/detail_category.dart';
 import 'package:myapp/src/widgets/detail/detail_rate.dart';
@@ -16,7 +16,7 @@ class InfoBook extends StatelessWidget {
   Widget build(BuildContext context){
     return Row(
       children: [
-        AdaptiveWidget.isSmallScreen(context)
+        AdaptiveWidget.isSmallScreen(screenSize)
         ? Container(
           height: screenSize.width / 1.5,
           decoration: BoxDecoration(

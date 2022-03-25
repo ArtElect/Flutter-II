@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/src/config/colors.dart';
 import 'package:myapp/src/config/fonts.dart';
-import 'package:myapp/src/widgets/adaptive/adaptive.dart';
+import 'package:adaptive_widgets/adaptive_widgets.dart';
 
 class FeaturedHeading extends StatelessWidget {
   final Size screenSize;
@@ -23,7 +23,7 @@ class FeaturedHeading extends StatelessWidget {
           Text(
             'Featured',
             style: TextStyle(
-              fontSize: AdaptiveWidget.isSmallScreen(context) ? screenSize.width / 15 : screenSize.width / 30,
+              fontSize: AdaptiveWidget.isSmallScreen(screenSize) ? screenSize.width / 15 : screenSize.width / 30,
               fontFamily: AppFonts.largeFeaturedHeadingFont,
               fontWeight: FontWeight.bold,
               color:AppColors.feautedHeadingColor,

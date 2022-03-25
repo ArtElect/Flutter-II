@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/src/widgets/adaptive/adaptive.dart';
+import 'package:adaptive_widgets/adaptive_widgets.dart';
 import 'package:myapp/src/widgets/bookslist/large_screen/large_item_card.dart';
 import 'package:myapp/src/widgets/bookslist/small_screen/small_item_card.dart';
 
@@ -14,7 +14,7 @@ class ItemCard extends StatelessWidget {
 
     return GestureDetector(
       onTap: onTap,
-      child: AdaptiveWidget.isSmallScreen(context)
+      child: AdaptiveWidget.isSmallScreen(screenSize)
       ? SmallItemCard(screenSize: screenSize,)
       : LargeItemCard(screenSize: screenSize,),
     );
