@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/src/config/fonts.dart';
-import 'package:myapp/src/widgets/adaptive/adaptive.dart';
+import 'package:adaptive_widgets/adaptive_widgets.dart';
 
 class ItemCardTitle extends StatelessWidget {
   final Size screenSize;
@@ -15,7 +15,7 @@ class ItemCardTitle extends StatelessWidget {
         'Reading The\nHistorical Books',
         style: TextStyle(
           fontFamily: AppFonts.itemCardTitleTextFont,
-          fontSize: AdaptiveWidget.isSmallScreen(context)
+          fontSize: AdaptiveWidget.isSmallScreen(screenSize)
           ? screenSize.width / 45
           : screenSize.width / 80,
           fontWeight: FontWeight.w700

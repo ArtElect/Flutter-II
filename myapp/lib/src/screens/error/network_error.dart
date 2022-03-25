@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/src/config/images.dart';
 import 'package:myapp/src/navigationDrawer/navigation_drawer.dart';
-import 'package:myapp/src/widgets/adaptive/adaptive.dart';
+import 'package:adaptive_widgets/adaptive_widgets.dart';
 import 'package:myapp/src/widgets/home/large_screen/large_top_bar.dart';
 import 'package:myapp/src/widgets/home/small_screen/small_top_bar.dart';
 
@@ -14,7 +14,7 @@ class NetworkErrorPage extends StatelessWidget {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AdaptiveWidget.isSmallScreen(context)
+      appBar: AdaptiveWidget.isSmallScreen(screenSize)
       ? const SmallTopBar(opacity: 0,)
       : LargeTopBar(screenSize: screenSize, opacity: 0,),
       drawerEdgeDragWidth: 0,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/src/widgets/adaptive/adaptive.dart';
+import 'package:adaptive_widgets/adaptive_widgets.dart';
 import 'package:myapp/src/widgets/home/large_screen/large_floating_bar.dart';
 import 'package:myapp/src/widgets/home/small_screen/small_floating_bar.dart';
 
@@ -22,14 +22,14 @@ class _FloatingBarContentsState extends State<FloatingBarContents> {
       child: Padding(
         padding: EdgeInsets.only(
           top: widget.screenSize.height * 0.60,
-          left: AdaptiveWidget.isSmallScreen(context)
+          left: AdaptiveWidget.isSmallScreen(widget.screenSize)
               ? widget.screenSize.width / 12
               : widget.screenSize.width / 5,
-          right: AdaptiveWidget.isSmallScreen(context)
+          right: AdaptiveWidget.isSmallScreen(widget.screenSize)
               ? widget.screenSize.width / 12
               : widget.screenSize.width / 5,
         ),
-        child: AdaptiveWidget.isSmallScreen(context)
+        child: AdaptiveWidget.isSmallScreen(widget.screenSize)
           ? SmallFloatingBar(screenSize: widget.screenSize,)
           : LargeFloatingBar(screenSize: widget.screenSize,),
       ),

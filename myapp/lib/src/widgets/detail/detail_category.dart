@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/src/config/fonts.dart';
-import 'package:myapp/src/widgets/adaptive/adaptive.dart';
+import 'package:adaptive_widgets/adaptive_widgets.dart';
 
 class DetailCategory extends StatelessWidget {
   final Size screenSize;
@@ -16,7 +16,7 @@ class DetailCategory extends StatelessWidget {
         style: TextStyle(
           fontWeight: FontWeight.w500,
           fontFamily: AppFonts.detailCategoryTextFont,
-          fontSize: AdaptiveWidget.isSmallScreen(context)
+          fontSize: AdaptiveWidget.isSmallScreen(screenSize)
           ? screenSize.width / 30
           : screenSize.width / 70,
         ),

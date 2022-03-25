@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/src/config/colors.dart';
 import 'package:myapp/src/widgets/home/large_screen/large_bottom_bar_contents.dart';
 import 'package:myapp/src/widgets/home/small_screen/small_bottom_bar_contents.dart';
-import 'package:myapp/src/widgets/adaptive/adaptive.dart';
+import 'package:adaptive_widgets/adaptive_widgets.dart';
 
 class BottomBar extends StatelessWidget {
   final Size screenSize;
@@ -38,7 +38,7 @@ class BottomBar extends StatelessWidget {
         ),
       ),
       padding: const EdgeInsets.all(30),
-      child: AdaptiveWidget.isSmallScreen(context)
+      child: AdaptiveWidget.isSmallScreen(screenSize)
       ? const SmallBottomBarContents()
       : const LargeBottomBarContents()
     );

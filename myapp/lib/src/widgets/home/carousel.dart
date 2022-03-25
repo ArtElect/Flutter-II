@@ -4,7 +4,7 @@ import 'package:myapp/src/config/colors.dart';
 import 'package:myapp/src/config/fonts.dart';
 import 'package:myapp/src/config/images.dart';
 import 'package:myapp/src/widgets/home/large_screen/large_carousel_bar.dart';
-import 'package:myapp/src/widgets/adaptive/adaptive.dart';
+import 'package:adaptive_widgets/adaptive_widgets.dart';
 
 class MainCarousel extends StatefulWidget {
   const MainCarousel({Key? key}) : super(key: key);
@@ -86,7 +86,7 @@ class _MainCarouselState extends State<MainCarousel> {
             ),
           ),
         ),
-        AdaptiveWidget.isSmallScreen(context)
+        AdaptiveWidget.isSmallScreen(screenSize)
         ? Container()
         : LargeCarouselBar(screenSize: screenSize,places: places,isSelected: _isSelected,isHovering: _isHovering,controller: _controller,)
       ],

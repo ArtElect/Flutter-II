@@ -12,6 +12,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  adaptive_widgets:
+    path: ../adaptive_widgets
 
   cupertino_icons: ^1.0.4
   carousel_slider: ^4.0.0

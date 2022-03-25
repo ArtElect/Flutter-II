@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:myapp/src/config/colors.dart';
 import 'package:myapp/src/config/fonts.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:myapp/src/widgets/adaptive/adaptive.dart';
+import 'package:adaptive_widgets/adaptive_widgets.dart';
 
 class DetailRate extends StatelessWidget {
   final Size screenSize;
@@ -28,7 +28,7 @@ class DetailRate extends StatelessWidget {
               color: AppColors.detailRateColor,
             ),
             itemCount: 5,
-            itemSize: AdaptiveWidget.isSmallScreen(context)
+            itemSize: AdaptiveWidget.isSmallScreen(screenSize)
             ? screenSize.width / 20
             : screenSize.width / 50,
           ),
@@ -36,7 +36,7 @@ class DetailRate extends StatelessWidget {
             '(42 reviews)',
             style: TextStyle(
               fontFamily: AppFonts.detailRateTextFont,
-              fontSize: AdaptiveWidget.isSmallScreen(context)
+              fontSize: AdaptiveWidget.isSmallScreen(screenSize)
               ? screenSize.width / 30
               : screenSize.width / 80,
               fontWeight: FontWeight.w700

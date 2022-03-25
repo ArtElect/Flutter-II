@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:myapp/src/config/colors.dart';
 import 'package:myapp/src/config/fonts.dart';
-import 'package:myapp/src/widgets/adaptive/adaptive.dart';
+import 'package:adaptive_widgets/adaptive_widgets.dart';
 
 class ItemCardRate extends StatelessWidget {
   final Size screenSize;
@@ -22,7 +22,7 @@ class ItemCardRate extends StatelessWidget {
               color: AppColors.itemCardRateColor,
             ),
             itemCount: 5,
-            itemSize: AdaptiveWidget.isSmallScreen(context)
+            itemSize: AdaptiveWidget.isSmallScreen(screenSize)
             ? screenSize.width / 36
             : screenSize.width / 50,
           ),
@@ -31,7 +31,7 @@ class ItemCardRate extends StatelessWidget {
             style: TextStyle(
               color: AppColors.itemCardRateNumberColor,
               fontFamily: AppFonts.itemCardRateNumberTextFont,
-              fontSize: AdaptiveWidget.isSmallScreen(context)
+              fontSize: AdaptiveWidget.isSmallScreen(screenSize)
               ? screenSize.width / 35
               : screenSize.width / 80,
               fontWeight: FontWeight.w600

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/src/config/fonts.dart';
-import 'package:myapp/src/widgets/adaptive/adaptive.dart';
+import 'package:adaptive_widgets/adaptive_widgets.dart';
 
 class DetailTitle extends StatelessWidget {
   final Size screenSize;
@@ -11,7 +11,7 @@ class DetailTitle extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(
         left: screenSize.width * 0.025,
-        top: AdaptiveWidget.isSmallScreen(context)
+        top: AdaptiveWidget.isSmallScreen(screenSize)
         ? screenSize.width * 0.02
         : screenSize.width * 0.025,
       ),
@@ -19,7 +19,7 @@ class DetailTitle extends StatelessWidget {
         'Reading The\nHistorical Books',
         style: TextStyle(
           fontFamily: AppFonts.detailTitleTextFont,
-          fontSize: AdaptiveWidget.isSmallScreen(context)
+          fontSize: AdaptiveWidget.isSmallScreen(screenSize)
           ? screenSize.width / 18
           : screenSize.width / 40,
           fontWeight: FontWeight.w700

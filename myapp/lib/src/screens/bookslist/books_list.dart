@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/src/navigationDrawer/navigation_drawer.dart';
-import 'package:myapp/src/widgets/adaptive/adaptive.dart';
+import 'package:adaptive_widgets/adaptive_widgets.dart';
 import 'package:myapp/src/widgets/bookslist/bookslist_bottom_bar.dart';
 import 'package:myapp/src/widgets/bookslist/bookslist_contents.dart';
 import 'package:myapp/src/widgets/bookslist/bookslist_heading.dart';
@@ -26,7 +26,7 @@ class _BooksListPageState extends State<BooksListPage> {
     Size screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: AdaptiveWidget.isSmallScreen(context)
+      appBar: AdaptiveWidget.isSmallScreen(screenSize)
       ? const SmallTopBar(opacity: 1.0,)
       : LargeTopBar(screenSize: screenSize, opacity: 1.0,),
       drawerEdgeDragWidth: 0,

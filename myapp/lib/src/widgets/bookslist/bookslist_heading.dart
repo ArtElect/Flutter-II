@@ -2,7 +2,7 @@ import 'package:auto_animated/auto_animated.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/src/config/colors.dart';
 import 'package:myapp/src/config/fonts.dart';
-import 'package:myapp/src/widgets/adaptive/adaptive.dart';
+import 'package:adaptive_widgets/adaptive_widgets.dart';
 
 class BookslistHeading extends StatelessWidget {
   final String heading;
@@ -38,7 +38,7 @@ class BookslistHeading extends StatelessWidget {
             Text(
               heading,
               style: TextStyle(
-                fontSize: AdaptiveWidget.isSmallScreen(context)
+                fontSize: AdaptiveWidget.isSmallScreen(screenSize)
                 ? screenSize.width / 18
                 : screenSize.width / 30,
                 fontFamily: AppFonts.booksListHeadingTextFont,
