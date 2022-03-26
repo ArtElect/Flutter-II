@@ -33,7 +33,7 @@ class _DetailPageState extends State<DetailPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             InfoBook(screenSize: screenSize, booksModel: widget.booksModel,),
-            IntroBook(screenSize: screenSize,),
+            IntroBook(screenSize: screenSize, booksModel: widget.booksModel,),
             BottomBar(screenSize: screenSize,),
           ],
         ),

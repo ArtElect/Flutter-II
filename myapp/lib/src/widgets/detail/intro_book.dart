@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/src/config/fonts.dart';
+import 'package:myapp/src/models/books_model.dart';
 
 class IntroBook extends StatelessWidget {
   final Size screenSize;
+  final BooksModel booksModel;
 
-  const IntroBook({Key? key, required this.screenSize,}) : super(key: key);
+  const IntroBook({Key? key, required this.screenSize, required this.booksModel,}) : super(key: key);
 
   @override
   Widget build(BuildContext context){
@@ -17,7 +19,7 @@ class IntroBook extends StatelessWidget {
             bottom: screenSize.width / 40,
             left: screenSize.width * 0.01,
           ),
-          child: Text(
+          child: const Text(
             "Synopsis",
             style: TextStyle(
               fontSize: 30,
@@ -26,16 +28,16 @@ class IntroBook extends StatelessWidget {
             ),
           ),
         ),
-        Padding(
+        Container(
           padding: EdgeInsets.only(
             bottom: screenSize.width / 40,
             left: screenSize.width * 0.01,
           ),
+          width: screenSize.width * 0.9,
           child: Text(
-            "Why do the rich stay rich and the poor stay poor? Because the rich teach their kids how to manage money and the others don't! Most employees would rather spend year after year in college and university learning nothing about money than become successful themselves."
-            "\nRobert T. Kiyosaki had a \"rich dad\" and a \"poor dad\" growing up. After heeding the advice of the former, he was able to retire at the age of 47. He had learned to make money work for him instead of the other way around. In \"Rich Dad Poor Dad\" he shares his knowledge and shows how anyone can be successful.",
+            booksModel.summary,
             textAlign: TextAlign.start,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w600,
               fontFamily: AppFonts.detailIntroContentTextFont,

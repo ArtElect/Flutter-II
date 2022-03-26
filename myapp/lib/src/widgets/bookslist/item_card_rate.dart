@@ -17,7 +17,7 @@ class ItemCardRate extends StatelessWidget {
       child: Row(
         children: [
           RatingBarIndicator(
-            rating: review != 0 ? 4 : 0,
+            rating: review != 0 ? review.toDouble() : 0,
             itemBuilder: (context, index) => const Icon(
               Icons.star,
               color: AppColors.itemCardRateColor,
