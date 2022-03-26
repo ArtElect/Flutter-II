@@ -16,11 +16,11 @@ books = [ ## title, review, summary, year_published, category, image
     {'id': 1,
      'title': 'The Ones Who Walk Away From Omelas',
      'author': 'Ursula K. Le Guin',
-     'published': '1973'},
+     'year_published': '1973'},
     {'id': 2,
      'title': 'Dhalgren',
      'author': 'Samuel R. Delany',
-     'published': '1975'}
+     'year_published': '1975'}
 ]
 
 fav = []
