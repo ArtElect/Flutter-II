@@ -4,15 +4,17 @@ import 'package:adaptive_widgets/adaptive_widgets.dart';
 
 class ItemCardTitle extends StatelessWidget {
   final Size screenSize;
+  final String title;
 
-  const ItemCardTitle({Key? key, required this.screenSize}) : super(key: key);
+  const ItemCardTitle({Key? key, required this.screenSize, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: EdgeInsets.symmetric(horizontal: screenSize.width * 0.030),
+      width: screenSize.width*0.2,
       child: Text(
-        'Reading The\nHistorical Books',
+        title,
         style: TextStyle(
           fontFamily: AppFonts.itemCardTitleTextFont,
           fontSize: AdaptiveWidget.isSmallScreen(screenSize)

@@ -4,7 +4,9 @@ import 'package:adaptive_widgets/adaptive_widgets.dart';
 
 class DetailAuthor extends StatelessWidget {
   final Size screenSize;
-  const DetailAuthor({Key? key, required this.screenSize}) : super(key: key);
+  final String author;
+
+  const DetailAuthor({Key? key, required this.screenSize, required this.author}) : super(key: key);
 
   @override
   Widget build(BuildContext context){
@@ -16,7 +18,7 @@ class DetailAuthor extends StatelessWidget {
         bottom: screenSize.width / 50,
       ),
       child: Text(
-        'By: Patricia Dutcher Walls',
+        'By: $author',
         style: TextStyle(
           fontWeight: FontWeight.w500,
           fontFamily: AppFonts.detailAuthorTextFont,

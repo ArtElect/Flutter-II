@@ -6,8 +6,9 @@ import 'package:adaptive_widgets/adaptive_widgets.dart';
 
 class ItemCardRate extends StatelessWidget {
   final Size screenSize;
+  final int review;
   
-  const ItemCardRate({Key? key, required this.screenSize}) : super(key: key);
+  const ItemCardRate({Key? key, required this.screenSize, required this.review}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class ItemCardRate extends StatelessWidget {
       child: Row(
         children: [
           RatingBarIndicator(
-            rating: 4,
+            rating: review != 0 ? 4 : 0,
             itemBuilder: (context, index) => const Icon(
               Icons.star,
               color: AppColors.itemCardRateColor,
@@ -27,7 +28,7 @@ class ItemCardRate extends StatelessWidget {
             : screenSize.width / 50,
           ),
           Text(
-            '42',
+            '$review',
             style: TextStyle(
               color: AppColors.itemCardRateNumberColor,
               fontFamily: AppFonts.itemCardRateNumberTextFont,

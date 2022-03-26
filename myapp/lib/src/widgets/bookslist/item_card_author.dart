@@ -5,8 +5,9 @@ import 'package:adaptive_widgets/adaptive_widgets.dart';
 
 class ItemCardAuthor extends StatefulWidget {
   final Size screenSize;
+  final String author;
 
-  const ItemCardAuthor({Key? key, required this.screenSize}) : super(key: key);
+  const ItemCardAuthor({Key? key, required this.screenSize, required this.author}) : super(key: key);
 
   @override
   _ItemCardAuthorState createState() => _ItemCardAuthorState();
@@ -18,7 +19,7 @@ class _ItemCardAuthorState extends State<ItemCardAuthor> {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: widget.screenSize.width * 0.030),
       child: Text(
-        'Patricia Dutcher Walls',
+        widget.author,
         style: TextStyle(
           fontWeight: FontWeight.w500,
           fontFamily: AppFonts.itemCardAuthorTextFont,

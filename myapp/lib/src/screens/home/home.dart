@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                     FeaturedHeading(screenSize: screenSize,),
                     FeaturedTiles(screenSize: screenSize),
                     MainHeading(screenSize: screenSize),
-                    const MainCarousel(),
+                    MainCarousel(screenSize: screenSize),
                     SizedBox(height: screenSize.height / 10,),
                     BottomBar(screenSize: screenSize,),
                   ],

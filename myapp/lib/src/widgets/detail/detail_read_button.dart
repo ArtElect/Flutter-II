@@ -43,7 +43,7 @@ class DetailReadButton extends StatelessWidget {
           : screenSize.width / 50,
           fontWeight: AdaptiveWidget.isSmallScreen(screenSize) 
           ? FontWeight.w600
-          : FontWeight.w200,
+          : FontWeight.w500,
         ),
         onPressed: () {},
       ),

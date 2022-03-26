@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/src/models/books_model.dart';
 import 'package:myapp/src/routes/page_routes.dart';
 import 'package:myapp/src/screens/bookslist/books_list.dart';
 import 'package:myapp/src/screens/error/network_error.dart';
@@ -10,7 +11,6 @@ import 'package:provider/provider.dart';
 class Routes {
 
   static Route routeBuilder(RouteSettings settings, Widget page) {
-    
     return PageRouteBuilder(
       settings: settings,
       pageBuilder: (context, _, __) => page,
@@ -44,7 +44,8 @@ class Routes {
       case PageRoutes.adventure:
         return routeBuilder(settings, const BooksListPage(heading: 'Adventure',),);
       case PageRoutes.detail:
-        return routeBuilder(settings, const DetailPage(),);
+        final booksModel = settings.arguments as BooksModel;
+        return routeBuilder(settings, DetailPage(booksModel: booksModel,),);
       default:
         return unknownPage();
     }

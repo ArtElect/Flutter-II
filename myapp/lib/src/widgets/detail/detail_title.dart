@@ -4,19 +4,22 @@ import 'package:adaptive_widgets/adaptive_widgets.dart';
 
 class DetailTitle extends StatelessWidget {
   final Size screenSize;
-  const DetailTitle({Key? key, required this.screenSize}) : super(key: key);
+  final String title;
+
+  const DetailTitle({Key? key, required this.screenSize, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context){
-    return Padding(
+    return Container(
       padding: EdgeInsets.only(
         left: screenSize.width * 0.025,
         top: AdaptiveWidget.isSmallScreen(screenSize)
         ? screenSize.width * 0.02
         : screenSize.width * 0.025,
       ),
+      width: screenSize.width*0.45,
       child: Text(
-        'Reading The\nHistorical Books',
+        title,
         style: TextStyle(
           fontFamily: AppFonts.detailTitleTextFont,
           fontSize: AdaptiveWidget.isSmallScreen(screenSize)

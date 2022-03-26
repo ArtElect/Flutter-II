@@ -11,7 +11,8 @@ class BottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return AdaptiveWidget.isLargeScreen(screenSize)
+    ? Container(
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(0.0)),
         boxShadow: <BoxShadow>[
@@ -38,9 +39,8 @@ class BottomBar extends StatelessWidget {
         ),
       ),
       padding: const EdgeInsets.all(30),
-      child: AdaptiveWidget.isSmallScreen(screenSize)
-      ? const SmallBottomBarContents()
-      : const LargeBottomBarContents()
-    );
+      child: const LargeBottomBarContents()
+    )
+    : Container();
   }
 }

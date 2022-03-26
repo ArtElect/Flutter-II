@@ -7,7 +7,9 @@ import 'package:myapp/src/widgets/home/large_screen/large_carousel_bar.dart';
 import 'package:adaptive_widgets/adaptive_widgets.dart';
 
 class MainCarousel extends StatefulWidget {
-  const MainCarousel({Key? key}) : super(key: key);
+  final Size screenSize;
+
+  const MainCarousel({Key? key, required this.screenSize}) : super(key: key);
 
   @override
   _MainCarouselState createState() => _MainCarouselState();
@@ -48,8 +50,7 @@ class _MainCarouselState extends State<MainCarousel> {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
-    var imageSliders = generateImageTiles(screenSize);
+    var imageSliders = generateImageTiles(widget.screenSize);
 
     return Stack(
       children: [
@@ -80,15 +81,15 @@ class _MainCarouselState extends State<MainCarousel> {
               style: TextStyle(
                 letterSpacing: 8,
                 fontFamily: AppFonts.carouselTextFont,
-                fontSize: screenSize.width / 25,
+                fontSize: widget.screenSize.width / 25,
                 color: AppColors.carouselTextColor,
               ),
             ),
           ),
         ),
-        AdaptiveWidget.isSmallScreen(screenSize)
+        AdaptiveWidget.isSmallScreen(widget.screenSize)
         ? Container()
-        : LargeCarouselBar(screenSize: screenSize,places: places,isSelected: _isSelected,isHovering: _isHovering,controller: _controller,)
+        : LargeCarouselBar(screenSize: widget.screenSize,places: places,isSelected: _isSelected,isHovering: _isHovering,controller: _controller,)
       ],
     );
   }

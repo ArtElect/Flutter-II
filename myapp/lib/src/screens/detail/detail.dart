@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/src/models/books_model.dart';
 import 'package:myapp/src/navigationDrawer/navigation_drawer.dart';
 import 'package:adaptive_widgets/adaptive_widgets.dart';
 import 'package:myapp/src/widgets/detail/info_book.dart';
@@ -8,7 +9,9 @@ import 'package:myapp/src/widgets/home/large_screen/large_top_bar.dart';
 import 'package:myapp/src/widgets/home/small_screen/small_top_bar.dart';
 
 class DetailPage extends StatefulWidget {
-  const DetailPage({ Key? key }) : super(key: key);
+  final BooksModel booksModel;
+  
+  const DetailPage({ Key? key, required this.booksModel }) : super(key: key);
 
   @override
   _DetailPageState createState() => _DetailPageState();
@@ -29,7 +32,7 @@ class _DetailPageState extends State<DetailPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            InfoBook(screenSize: screenSize),
+            InfoBook(screenSize: screenSize, booksModel: widget.booksModel,),
             IntroBook(screenSize: screenSize,),
             BottomBar(screenSize: screenSize,),
           ],

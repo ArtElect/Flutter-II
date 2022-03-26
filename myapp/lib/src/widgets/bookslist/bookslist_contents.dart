@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_animated/auto_animated.dart';
-import 'package:myapp/src/routes/page_routes.dart';
+import 'package:myapp/src/models/books_model.dart';
 import 'package:adaptive_widgets/adaptive_widgets.dart';
 import 'package:myapp/src/widgets/bookslist/item_card.dart';
 
@@ -8,12 +8,14 @@ class BookslistContents extends StatefulWidget {
   final Size screenSize;
   final ScrollController scrollController;
   final Duration listShowItemDuration;
+  final List<dynamic> data;
 
   const BookslistContents({
     Key? key,
     required this.screenSize,
     required this.scrollController,
-    required this.listShowItemDuration
+    required this.listShowItemDuration,
+    required this.data,
   }) : super(key: key);
 
   @override
@@ -33,9 +35,7 @@ class _BookslistContentsState extends State<BookslistContents> {
           begin: const Offset(0, -0.1),
           end: Offset.zero,
         ).animate(animation),
-        child: StreamBuilder(
-          builder: ((context, snapshot) => ItemCard(onTap: () {Navigator.popAndPushNamed(context, PageRoutes.detail);},)),
-        ),
+        child: ItemCard(booksModel: BooksModel.fromJson(widget.data[index]),),
       ),
     );
   }
@@ -45,7 +45,7 @@ class _BookslistContentsState extends State<BookslistContents> {
     return LiveSliverGrid(
       controller: widget.scrollController,
       delay: widget.listShowItemDuration * 2,
-      itemCount: 8,
+      itemCount: widget.data.length,
       itemBuilder: buildAnimatedItem,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: AdaptiveWidget.isSmallScreen(widget.screenSize) ? 2 : 5,
