@@ -100,7 +100,7 @@ fav = []
 @app.route('/', methods=['GET'])
 def home():
     return '''<h1>Distant Reading Archive</h1>
-<p>A prototype API for crypto</p>'''
+<p>A prototype API for books</p>'''
 
 @app.route('/api/v1/resources/books/all', methods=['GET'])
 def api_all():
