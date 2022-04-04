@@ -14,7 +14,6 @@ dependencies:
     sdk: flutter
   adaptive_widgets:
     path: ../adaptive_widgets
-
   cupertino_icons: ^1.0.4
   carousel_slider: ^4.0.0
   responsive_framework: ^0.1.7
@@ -26,13 +25,17 @@ dependencies:
   connectivity_plus: ^2.2.1
   provider: ^6.0.2
   dio: ^4.0.4
-  mockito: ^5.1.0
+
   
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  integration_test:
+    sdk: flutter
+  test: ^1.14.4
   flutter_lints: ^1.0.0
+  build_runner: ^2.1.8
+  mockito: ^5.1.0
 
 flutter:
 
